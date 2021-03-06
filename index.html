@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>zsh.one | make this world a little better</title>
+<meta name="generator" content="Jekyll v4.1.0" />
+<meta property="og:title" content="zsh.one" />
+<meta name="author" content="Connecting People" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="install ohmyzsh plugins in an esay way" />
+<meta property="og:description" content="install ohmyzsh plugins in an esay way" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="zsh.one" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Connecting People"},"@type":"WebSite","description":"install ohmyzsh plugins in an esay way","name":"zsh.one","url":"http://localhost:4000/","headline":"zsh.one","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="zsh.one" />
+
+<link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">zsh.one</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">about</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home"><h1 id="install-ohmyzsh-plugins">install ohmyzsh plugins</h1>
+<blockquote>
+  <p>in an esay way</p>
+</blockquote>
+
+<p>1 click script</p>
+
+<p><code class="language-plaintext highlighter-rouge">sh &lt;(curl -L get.zsh.one)</code></p>
+
+<blockquote>
+  <p>or in a hard way</p>
+</blockquote>
+
+<ul>
+  <li>install zsh first</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt update &amp;&amp; sudo apt install -y zsh</code></p>
+
+<ul>
+  <li>install requirements</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt install -y curl git vim nano</code></p>
+
+<ul>
+  <li>install ohmyzhs</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code></p>
+
+<ul>
+  <li>zsh-autosuggestions</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions</code></p>
+
+<ul>
+  <li>zsh-syntax-highlighting</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting</code></p>
+
+<ul>
+  <li>zsh-completions</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions</code></p>
+
+<ul>
+  <li>make .zshrc backup and edit .zshrc</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">cp .zshrc .zshrc.bak</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">vim .zshrc</code></p>
+
+<ul>
+  <li>find <code class="language-plaintext highlighter-rouge">plugins=(git)</code> line</li>
+</ul>
+
+<p>type <code class="language-plaintext highlighter-rouge">dd</code> to delete this line</p>
+
+<p>type <code class="language-plaintext highlighter-rouge">i</code> to insert</p>
+
+<p>copy following code to paste</p>
+
+<p><code class="language-plaintext highlighter-rouge">plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting)</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">autoload -U compinit &amp;&amp; compinit</code></p>
+
+<p>Click <code class="language-plaintext highlighter-rouge">ESC</code> key and type <code class="language-plaintext highlighter-rouge">:wq</code> to save and quit.</p>
+
+<ul>
+  <li>if network is’not very good, you better use nano to edit</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">nano .zshrc</code></p>
+
+<p>find &gt; delete &gt; paste &gt; save</p>
+
+<hr />
+
+<h2 id="good-luck-">Good luck !</h2>
+
+
+
+  </div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Connecting People</li>
+          <li><a class="u-email" href="mailto:initd@outlook.com">initd@outlook.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>make this world a little better
+</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/initdc" title="initdc"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/evendorton" title="evendorton"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
